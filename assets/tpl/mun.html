@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ meta.escopo }}</title>
+
+    <link rel="stylesheet" type="text/css" href="../assets/others/semantic.min.css">
+</head>
+<body>
+    <div class="ui container">
+        <h3 class="ui header">Relatório Mensal</h3>
+        <h1 class="ui header">
+            <i class="chart bar icon"></i>
+            <div class="content">
+                {{ meta.escopo }}
+                <h2 class="sub header">{{ meta.competencia }}</h2>
+            </div>
+        </h1>
+
+        <div class="ui horizontal divider"></div>
+
+        <div class="ui container">
+            <div class="ui segments">
+                <div class="ui blue segment">
+                    <h4 class="ui sub header">Área Temática</h4>
+                    <h2 class="ui header">
+                        <i class="book icon"></i>
+                        <div class="content">Educação</div>
+                    </h2>
+
+
+                </div>
+                <div class="ui segment">
+                    <h3 class="ui header">Aplicação da receita decorrente de impostos em Manutenção e Desenvolvimento do Ensino (MDE)</h3>
+
+                    <img class="ui fluid image" src="../{{figlist.evolucao_indice_mde}}">
+
+                    <table class="ui compact table">
+                      <thead>
+                        <tr>
+                            <th class="left aligned" colspan="5"><h3 class="ui header">Aplicação da receita de impostos em MDE</h3></th>
+                        </tr>
+                        <tr>
+                            <th class="left aligned">Data-base</th>
+                            <th class="right aligned">Receita</th>
+                            <th class="right aligned">Despesa</th>
+                            <th class="right aligned">% aplicado</th>
+                            <th class="right aligned">$ aplicado a maior/menor</th>
+                      </tr></thead>
+                      <tbody>
+                        {% for i, r in dflist.mde.iterrows() %}
+                            <tr>
+                                <td class="left aligned">{{ r.data_base.strftime("%d/%m/%Y") }}</td>
+                                <td class="right aligned">{{ r.receita_bc|format_money }}</td>
+                                <td class="right aligned">{{ r.despesa_bc|format_money }}</td>
+                                <td class="{{ 'negative ' if r.indice < 0.25 else 'positive' }} right aligned">{{ r.indice|format_percent }}</td>
+                                <td class="{{ 'negative ' if r.diferenca < 0.0 }}right aligned">{{ r.diferenca|format_money }}</td>
+                            </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<script src="../assets/others/jquery.min.js"></script>
+<script src="../assets/others/semantic.min.js"></script>
+</body>
+</html>
