@@ -4,7 +4,7 @@ from iddrs.kpi import generate_report
 ano = 2023
 mes = 4
 
-mde = educacao.MDE(ano, mes)
-mde.run()
+educacao.MDE(ano, mes).run()
+educacao.Fundeb(ano, mes).run()
 
 generate_report(f'mun_{ano}-{mes}')

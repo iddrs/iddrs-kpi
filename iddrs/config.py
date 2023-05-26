@@ -7,10 +7,10 @@ path_asset_dataframes = r'assets/df/'
 path_asset_templates = r'assets/tpl/'
 
 colors = {
-    'primary': '#00477e',
-    'secondary': '#b2beb5',
-    'positive': '#004d33',
-    'negative': '#a6001a'
+    'primary': '#2980b9',
+    'secondary': '#7f8c8d',
+    'positive': '#16a085',
+    'negative': '#c0392b'
 }
 
 figsize=(10, 5)

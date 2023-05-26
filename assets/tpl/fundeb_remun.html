@@ -1,0 +1,40 @@
+<div class="ui grey segment">
+                    <div class="ui massive breadcrumb">
+                        <div class="section">Educação</div>
+                        <i class="right chevron icon divider"></i>
+                        <div class="section">Fundeb</div>
+                        <i class="right chevron icon divider"></i>
+                        <div class="active section">Remuneração</div>
+                    </div>
+
+                    <div class="ui message">
+                        <p>A legislação do Fundeb determina que os municípios apliquem anualmente pelo menos 70% da receita recebida do Fundeb na remuneração dos profissionais da educação.</p>
+                    </div>
+
+                    <img class="ui fluid image" src="../{{figlist.evolucao_indice_remun_fundeb}}">
+
+                    <table class="ui compact table">
+                      <thead>
+                        <tr>
+                            <th class="left aligned" colspan="5"><h3 class="ui header">Aplicação do Fundeb em remuneração</h3></th>
+                        </tr>
+                        <tr>
+                            <th class="left aligned">Data-base</th>
+                            <th class="right aligned">Receita</th>
+                            <th class="right aligned">Despesa</th>
+                            <th class="right aligned">% aplicado</th>
+                            <th class="right aligned">$ aplicado a maior/menor</th>
+                      </tr></thead>
+                      <tbody>
+                        {% for i, r in dflist.fundeb_remun.iterrows() %}
+                            <tr>
+                                <td class="left aligned">{{ r.data_base.strftime("%d/%m/%Y") }}</td>
+                                <td class="right aligned">{{ r.receita_bc_remun|format_money }}</td>
+                                <td class="right aligned">{{ r.despesa_bc_remun|format_money }}</td>
+                                <td class="{{ 'negative ' if r.indice_remun < 0.7 else 'positive' }} right aligned">{{ r.indice_remun|format_percent }}</td>
+                                <td class="{{ 'negative ' if r.diferenca_remun < 0.0 }}right aligned">{{ r.diferenca_remun|format_money }}</td>
+                            </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
