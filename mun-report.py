@@ -6,5 +6,6 @@ mes = 4
 
 educacao.MDE(ano, mes).run()
 educacao.Fundeb(ano, mes).run()
+educacao.Educacao(ano, mes).run()
 
 generate_report(f'mun_{ano}-{mes}')

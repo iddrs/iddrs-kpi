@@ -4,6 +4,7 @@ import iddrs.kpi
 from iddrs import db, utils, config
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+from matplotlib.ticker import FuncFormatter
 
 class MDE(iddrs.kpi.KPIBase):
 
@@ -75,3 +76,34 @@ class Fundeb(iddrs.kpi.KPIBase):
         df = self._df[['data_base', 'indice_remun', 'receita_bc_remun', 'despesa_bc_remun']].copy()
         df['diferenca_remun'] = round(df['despesa_bc_remun'] - (df['receita_bc_remun'] * 0.7), 2)
         self.save_df(df, 'fundeb_remun')
+
+
+class Educacao(iddrs.kpi.KPIBase):
+
+    def __init__(self, ano, mes):
+        self._data_base_final = utils.get_database(ano, mes)
+        self._data_base_inicial = utils.get_primeiro_dia_ano(ano)
+
+    def run(self):
+        self.plot_evolucao_receita_despesa()
+        self.df_receita_despesa()
+
+    def plot_evolucao_receita_despesa(self):
+        df = db.exec_sql(f'SELECT data_base, arrecadado, empenhado, liquidado FROM indicadores."RECEITA_DESPESA_EDUCACAO" WHERE data_base BETWEEN \'{self._data_base_inicial}\' AND \'{self._data_base_final}\' ORDER BY data_base ASC')
+        df['data_base'] = pd.to_datetime(df['data_base'], format='%Y-%m-%d')
+        fig, ax = plt.subplots(figsize=config.figsize)
+        ax.text(0, 1.1, 'Evolução da receita e despesa da educação', fontsize=14, fontweight='bold',
+                transform=ax.transAxes)
+        ax.text(0, 1.05, 'valores acumulados | receita arrecadada | despesa empenhada e liquidada', fontsize=12, transform=ax.transAxes)
+        ax.xaxis.set_major_formatter(mdates.DateFormatter('%m/%y'))
+        ax.xaxis.set_ticks(df['data_base'])
+        ax.yaxis.set_major_formatter(FuncFormatter(lambda x, pos: f'{x:,.0f}'.replace(',', '_').replace('.', ',').replace('_', '.')))
+        ax.plot(df['data_base'], df['arrecadado'], color=config.colors['positive'], label='Arrecadado', marker='o')
+        ax.plot(df['data_base'], df['empenhado'], color=config.colors['negative'], label='Empenhado', marker='s')
+        ax.plot(df['data_base'], df['liquidado'], color=config.colors['negative'], label='Liquidado', marker='^', alpha=0.7)
+        ax.legend()
+        self.save_fig(fig, 'evolucao_receita_despesa_educacao')
+
+    def df_receita_despesa(self):
+        df = db.exec_sql(f'SELECT data_base, arrecadado, empenhado, liquidado, pago FROM indicadores."RECEITA_DESPESA_EDUCACAO" WHERE data_base BETWEEN \'{self._data_base_inicial}\' AND \'{self._data_base_final}\' ORDER BY data_base ASC')
+        self.save_df(df, 'receita_despesa_educacao')
