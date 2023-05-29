@@ -80,6 +80,8 @@ def generate_dash(ano, mes):
     save_tpl(base_dir_output, 'index.html', env, context)
     context['tema'] = 'educacao'
     save_tpl(base_dir_output, 'educacao.html', env, context)
+    context['tema'] = 'saude'
+    save_tpl(base_dir_output, 'saude.html', env, context)
     copy_figs(base_dir_output)
 
 def save_tpl(basedir, tpl, env, context, output=None):
