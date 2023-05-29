@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ ente }} / {{ uf }}</title>
+
+    <link rel="stylesheet" type="text/css" href="../assets/semantic.min.css">
+</head>
+
+<body>
+
+    <div class="ui attached stackable inverted menu">
+        <div class="ui container">
+            <a class="item" href="index.html">
+                <i class="home icon"></i> Início
+            </a>
+            <a class="item" href="educacao.html">
+                <i class="book icon"></i> Educação
+            </a>
+            <a class="item" href="saude.html">
+                <i class="smile icon"></i> Saúde
+            </a>
+            <div class="right item">
+                <!--<div class="ui input">
+                    <input type="month" value="{{ competencia }}">
+                </div>-->
+                <div class="ui icon buttons">
+                    <a href="../{{ competencia_anterior }}/{{tema}}.html" class="ui button">
+                        <i class="angle left icon"></i>
+                    </a>
+                    <div class="ui left labeled button">
+                        <a class="ui basic label">{{ competencia_texto }}</a>
+                        <div class="ui icon button">
+                            <i class="calendar alternate outline icon"></i>
+                        </div>
+                    </div>
+                    <a href="../{{ competencia_posterior }}/{{tema}}.html" class="ui button">
+                        <i class="angle right icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui container">
+        {% block breadcrumb %}
+        <div class="ui breadcrumb">
+            <a class="section">Home</a>
+            <div class="divider"> / </div>
+            <a class="section">Store</a>
+            <div class="divider"> / </div>
+            <div class="active section">T-Shirt</div>
+        </div>
+        {% endblock breadcrumb %}
+        
+        {% block tabs %}
+        <div class="ui top attached tabular menu">
+            <a class="active item" data-tab="first">First</a>
+            <a class="item" data-tab="second">Second</a>
+            <a class="item" data-tab="third">Third</a>
+        </div>
+        <div class="ui bottom attached active tab segment" data-tab="first">
+            First
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="second">
+            Second
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="third">
+            Third
+        </div>
+        {% endblock tabs %}
+    </div>
+
+
+
+
+
+    <script src="../assets/jquery.min.js"></script>
+    <script src="../assets/semantic.min.js"></script>
+    <script>
+        $('.menu .item')
+            .tab()
+            ;
+    </script>
+</body>
+
+</html>

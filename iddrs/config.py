@@ -1,6 +1,6 @@
 """Configurações gerais do Data Warehouse"""
 
-engine_connection_string = r'postgresql://postgres:lise890@localhost:5432/iddrs' # String de conexão com o banco de dados
+engine_connection_string = r'postgresql+psycopg2://postgres:lise890@localhost:5432/iddrs' # String de conexão com o banco de dados
 
 path_asset_figures = r'assets/fig/'
 path_asset_dataframes = r'assets/df/'
@@ -14,3 +14,5 @@ colors = {
 }
 
 figsize=(10, 5)
+
+path_output = r'docs'

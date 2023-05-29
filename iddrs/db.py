@@ -3,7 +3,7 @@ import pandas as pd
 
 from iddrs import config
 from iddrs import db
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 
 def get_engine():
     """
@@ -15,13 +15,13 @@ def get_engine():
 def load_df(table_name, schema):
     engine = db.get_engine()
     conn = engine.connect()
-    df = pd.read_sql_query(f'SELECT * FROM {schema}."{table_name}"', conn)
+    df = pd.read_sql_query(text(f'SELECT * FROM {schema}."{table_name}"'), conn)
     conn.close()
     return df
 
 def exec_sql(sql):
     engine = db.get_engine()
     conn = engine.connect()
-    df = pd.read_sql_query(sql, conn)
+    df = pd.read_sql_query(text(sql), conn)
     conn.close()
     return df
