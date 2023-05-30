@@ -1,7 +1,7 @@
 from datetime import date
 import calendar
-
 import pandas as pd
+import numpy as np
 
 
 def get_database(ano: int, mes: int) -> date:
@@ -30,3 +30,12 @@ def get_primeiro_dia_ano(ano: int) -> date:
     """
     return date(ano, 1, 1)
 
+def completa_data_base(df: pd.DataFrame, ano: int, campos: list, index: str) -> pd.DataFrame:
+    n = len(df)
+    dates = pd.date_range(f'{str(ano)}-01-31', f'{str(ano)}-12-31', freq='M')
+    df1 = pd.DataFrame({index: dates})
+    for campo in campos:
+        if campo == index:
+            continue
+        df1[campo] = pd.concat([df[campo], pd.Series(np.nan, index=list(range(n, 12)))])
+    return df1
