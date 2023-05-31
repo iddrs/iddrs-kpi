@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, timedelta, datetime
 import calendar
 import pandas as pd
 import numpy as np
@@ -39,3 +39,20 @@ def completa_data_base(df: pd.DataFrame, ano: int, campos: list, index: str) -> 
             continue
         df1[campo] = pd.concat([df[campo], pd.Series(np.nan, index=list(range(n, 12)))])
     return df1
+
+def xlimites_data_base(data_base: pd.Series) -> tuple:
+    inicio = data_base.min()
+    fim = data_base.max()
+    ano = inicio.year
+    mes = inicio.month - 1
+    if mes < 1:
+        mes = 12
+        ano -= 1
+    anterior = get_database(ano, mes)
+    ano = fim.year
+    mes = fim.month + 1
+    if mes > 12:
+        mes = 1
+        ano += 1
+    posterior = get_database(ano, mes)
+    return(anterior, posterior)
