@@ -5,7 +5,7 @@ title: "Painel de indicadores"
 author: "Secretaria da Fazenda / Setor de Contabilidade"
 copyright: "2023"
 logo: assets/images/brasao.jpg
-exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", "README.*"]
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", "README.*", "capa-*.ipynb"]
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
