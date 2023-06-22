@@ -1,0 +1,1186 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Despesas &#8212; Painel de indicadores</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/pm/despesas';</script>
+    <link rel="shortcut icon" href="../../_static/brasao.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Receitas" href="receitas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/brasao.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/brasao.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Painel de Indicadores
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prefeitura</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="receitas.html">Receitas</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Despesas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/pm/despesas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Despesas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despesa-total">Despesa Total</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despesa-corrente">Despesa Corrente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despesa-com-pessoal-e-encargos-sociais">Despesa com Pessoal e Encargos Sociais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despesa-de-custeio">Despesa de Custeio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despesa-por-orgaos">Despesa por Órgãos</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="despesas">
+<h1>Despesas<a class="headerlink" href="#despesas" title="Permalink to this heading">#</a></h1>
+<p>Nesta parte são demonstradas as despesas da <strong>Prefeitura</strong>, excluídas, portanto, as receias do <em>RPPS</em> e da <em>Câmara de Vereadores</em>. As despesas <em>intra-orçamentárias</em> executadas são incluídas nos valores.</p>
+<section id="despesa-total">
+<h2>Despesa Total<a class="headerlink" href="#despesa-total" title="Permalink to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/f4fbe285af55fd5272508509f8fc4d88956f0675bd56b53874c1ce916eedbbb3.png" src="../../_images/f4fbe285af55fd5272508509f8fc4d88956f0675bd56b53874c1ce916eedbbb3.png" />
+</div>
+</div>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_76285">
+  <caption>Despesa Total - valores acumulados - 2023</caption>
+  <thead>
+    <tr>
+      <th id="T_76285_level0_col0" class="col_heading level0 col0" >Mês</th>
+      <th id="T_76285_level0_col1" class="col_heading level0 col1" >Dotação Inicial</th>
+      <th id="T_76285_level0_col2" class="col_heading level0 col2" >Dotação Atualizada</th>
+      <th id="T_76285_level0_col3" class="col_heading level0 col3" >Empenhado</th>
+      <th id="T_76285_level0_col4" class="col_heading level0 col4" >Liquidado</th>
+      <th id="T_76285_level0_col5" class="col_heading level0 col5" >Pago</th>
+      <th id="T_76285_level0_col6" class="col_heading level0 col6" >A Empenhar</th>
+      <th id="T_76285_level0_col7" class="col_heading level0 col7" >A Liquidar</th>
+      <th id="T_76285_level0_col8" class="col_heading level0 col8" >A Pagar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_76285_row0_col0" class="data row0 col0" >jan</td>
+      <td id="T_76285_row0_col1" class="data row0 col1" >36.470.656,34</td>
+      <td id="T_76285_row0_col2" class="data row0 col2" >37.128.606,73</td>
+      <td id="T_76285_row0_col3" class="data row0 col3" >6.197.367,20</td>
+      <td id="T_76285_row0_col4" class="data row0 col4" >2.005.989,99</td>
+      <td id="T_76285_row0_col5" class="data row0 col5" >1.507.474,02</td>
+      <td id="T_76285_row0_col6" class="data row0 col6" >30.931.239,53</td>
+      <td id="T_76285_row0_col7" class="data row0 col7" >4.191.377,21</td>
+      <td id="T_76285_row0_col8" class="data row0 col8" >498.515,97</td>
+    </tr>
+    <tr>
+      <td id="T_76285_row1_col0" class="data row1 col0" >fev</td>
+      <td id="T_76285_row1_col1" class="data row1 col1" >36.470.656,34</td>
+      <td id="T_76285_row1_col2" class="data row1 col2" >37.762.895,12</td>
+      <td id="T_76285_row1_col3" class="data row1 col3" >8.946.915,37</td>
+      <td id="T_76285_row1_col4" class="data row1 col4" >4.562.103,04</td>
+      <td id="T_76285_row1_col5" class="data row1 col5" >4.075.190,58</td>
+      <td id="T_76285_row1_col6" class="data row1 col6" >28.815.979,75</td>
+      <td id="T_76285_row1_col7" class="data row1 col7" >4.384.812,33</td>
+      <td id="T_76285_row1_col8" class="data row1 col8" >486.912,46</td>
+    </tr>
+    <tr>
+      <td id="T_76285_row2_col0" class="data row2 col0" >mar</td>
+      <td id="T_76285_row2_col1" class="data row2 col1" >36.470.656,34</td>
+      <td id="T_76285_row2_col2" class="data row2 col2" >37.929.536,81</td>
+      <td id="T_76285_row2_col3" class="data row2 col3" >12.375.697,50</td>
+      <td id="T_76285_row2_col4" class="data row2 col4" >7.535.530,49</td>
+      <td id="T_76285_row2_col5" class="data row2 col5" >7.029.441,27</td>
+      <td id="T_76285_row2_col6" class="data row2 col6" >25.553.839,31</td>
+      <td id="T_76285_row2_col7" class="data row2 col7" >4.840.167,01</td>
+      <td id="T_76285_row2_col8" class="data row2 col8" >506.089,22</td>
+    </tr>
+    <tr>
+      <td id="T_76285_row3_col0" class="data row3 col0" >abr</td>
+      <td id="T_76285_row3_col1" class="data row3 col1" >36.470.656,34</td>
+      <td id="T_76285_row3_col2" class="data row3 col2" >38.199.202,82</td>
+      <td id="T_76285_row3_col3" class="data row3 col3" >15.299.155,37</td>
+      <td id="T_76285_row3_col4" class="data row3 col4" >10.354.188,19</td>
+      <td id="T_76285_row3_col5" class="data row3 col5" >9.665.168,46</td>
+      <td id="T_76285_row3_col6" class="data row3 col6" >22.900.047,45</td>
+      <td id="T_76285_row3_col7" class="data row3 col7" >4.944.967,18</td>
+      <td id="T_76285_row3_col8" class="data row3 col8" >689.019,73</td>
+    </tr>
+    <tr>
+      <td id="T_76285_row4_col0" class="data row4 col0" >mai</td>
+      <td id="T_76285_row4_col1" class="data row4 col1" >36.470.656,34</td>
+      <td id="T_76285_row4_col2" class="data row4 col2" >38.631.102,82</td>
+      <td id="T_76285_row4_col3" class="data row4 col3" >18.494.640,77</td>
+      <td id="T_76285_row4_col4" class="data row4 col4" >13.550.898,28</td>
+      <td id="T_76285_row4_col5" class="data row4 col5" >13.151.825,42</td>
+      <td id="T_76285_row4_col6" class="data row4 col6" >20.136.462,05</td>
+      <td id="T_76285_row4_col7" class="data row4 col7" >4.943.742,49</td>
+      <td id="T_76285_row4_col8" class="data row4 col8" >399.072,86</td>
+    </tr>
+    <tr>
+      <td id="T_76285_row5_col0" class="data row5 col0" >jun</td>
+      <td id="T_76285_row5_col1" class="data row5 col1" ></td>
+      <td id="T_76285_row5_col2" class="data row5 col2" ></td>
+      <td id="T_76285_row5_col3" class="data row5 col3" ></td>
+      <td id="T_76285_row5_col4" class="data row5 col4" ></td>
+      <td id="T_76285_row5_col5" class="data row5 col5" ></td>
+      <td id="T_76285_row5_col6" class="data row5 col6" ></td>
+      <td id="T_76285_row5_col7" class="data row5 col7" ></td>
+      <td id="T_76285_row5_col8" class="data row5 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_76285_row6_col0" class="data row6 col0" >jul</td>
+      <td id="T_76285_row6_col1" class="data row6 col1" ></td>
+      <td id="T_76285_row6_col2" class="data row6 col2" ></td>
+      <td id="T_76285_row6_col3" class="data row6 col3" ></td>
+      <td id="T_76285_row6_col4" class="data row6 col4" ></td>
+      <td id="T_76285_row6_col5" class="data row6 col5" ></td>
+      <td id="T_76285_row6_col6" class="data row6 col6" ></td>
+      <td id="T_76285_row6_col7" class="data row6 col7" ></td>
+      <td id="T_76285_row6_col8" class="data row6 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_76285_row7_col0" class="data row7 col0" >ago</td>
+      <td id="T_76285_row7_col1" class="data row7 col1" ></td>
+      <td id="T_76285_row7_col2" class="data row7 col2" ></td>
+      <td id="T_76285_row7_col3" class="data row7 col3" ></td>
+      <td id="T_76285_row7_col4" class="data row7 col4" ></td>
+      <td id="T_76285_row7_col5" class="data row7 col5" ></td>
+      <td id="T_76285_row7_col6" class="data row7 col6" ></td>
+      <td id="T_76285_row7_col7" class="data row7 col7" ></td>
+      <td id="T_76285_row7_col8" class="data row7 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_76285_row8_col0" class="data row8 col0" >set</td>
+      <td id="T_76285_row8_col1" class="data row8 col1" ></td>
+      <td id="T_76285_row8_col2" class="data row8 col2" ></td>
+      <td id="T_76285_row8_col3" class="data row8 col3" ></td>
+      <td id="T_76285_row8_col4" class="data row8 col4" ></td>
+      <td id="T_76285_row8_col5" class="data row8 col5" ></td>
+      <td id="T_76285_row8_col6" class="data row8 col6" ></td>
+      <td id="T_76285_row8_col7" class="data row8 col7" ></td>
+      <td id="T_76285_row8_col8" class="data row8 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_76285_row9_col0" class="data row9 col0" >out</td>
+      <td id="T_76285_row9_col1" class="data row9 col1" ></td>
+      <td id="T_76285_row9_col2" class="data row9 col2" ></td>
+      <td id="T_76285_row9_col3" class="data row9 col3" ></td>
+      <td id="T_76285_row9_col4" class="data row9 col4" ></td>
+      <td id="T_76285_row9_col5" class="data row9 col5" ></td>
+      <td id="T_76285_row9_col6" class="data row9 col6" ></td>
+      <td id="T_76285_row9_col7" class="data row9 col7" ></td>
+      <td id="T_76285_row9_col8" class="data row9 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_76285_row10_col0" class="data row10 col0" >nov</td>
+      <td id="T_76285_row10_col1" class="data row10 col1" ></td>
+      <td id="T_76285_row10_col2" class="data row10 col2" ></td>
+      <td id="T_76285_row10_col3" class="data row10 col3" ></td>
+      <td id="T_76285_row10_col4" class="data row10 col4" ></td>
+      <td id="T_76285_row10_col5" class="data row10 col5" ></td>
+      <td id="T_76285_row10_col6" class="data row10 col6" ></td>
+      <td id="T_76285_row10_col7" class="data row10 col7" ></td>
+      <td id="T_76285_row10_col8" class="data row10 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_76285_row11_col0" class="data row11 col0" >dez</td>
+      <td id="T_76285_row11_col1" class="data row11 col1" ></td>
+      <td id="T_76285_row11_col2" class="data row11 col2" ></td>
+      <td id="T_76285_row11_col3" class="data row11 col3" ></td>
+      <td id="T_76285_row11_col4" class="data row11 col4" ></td>
+      <td id="T_76285_row11_col5" class="data row11 col5" ></td>
+      <td id="T_76285_row11_col6" class="data row11 col6" ></td>
+      <td id="T_76285_row11_col7" class="data row11 col7" ></td>
+      <td id="T_76285_row11_col8" class="data row11 col8" ></td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="despesa-corrente">
+<h2>Despesa Corrente<a class="headerlink" href="#despesa-corrente" title="Permalink to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/7f10b3c6c024cf4ea4fcfb47c8ff7810337ad33b8f7783bf049babdd12217388.png" src="../../_images/7f10b3c6c024cf4ea4fcfb47c8ff7810337ad33b8f7783bf049babdd12217388.png" />
+</div>
+</div>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_050c6">
+  <caption>Despesa Corrente - valores acumulados - 2023</caption>
+  <thead>
+    <tr>
+      <th id="T_050c6_level0_col0" class="col_heading level0 col0" >Mês</th>
+      <th id="T_050c6_level0_col1" class="col_heading level0 col1" >Dotação Inicial</th>
+      <th id="T_050c6_level0_col2" class="col_heading level0 col2" >Dotação Atualizada</th>
+      <th id="T_050c6_level0_col3" class="col_heading level0 col3" >Empenhado</th>
+      <th id="T_050c6_level0_col4" class="col_heading level0 col4" >Liquidado</th>
+      <th id="T_050c6_level0_col5" class="col_heading level0 col5" >Pago</th>
+      <th id="T_050c6_level0_col6" class="col_heading level0 col6" >A Empenhar</th>
+      <th id="T_050c6_level0_col7" class="col_heading level0 col7" >A Liquidar</th>
+      <th id="T_050c6_level0_col8" class="col_heading level0 col8" >A Pagar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_050c6_row0_col0" class="data row0 col0" >jan</td>
+      <td id="T_050c6_row0_col1" class="data row0 col1" >32.803.952,72</td>
+      <td id="T_050c6_row0_col2" class="data row0 col2" >33.718.131,17</td>
+      <td id="T_050c6_row0_col3" class="data row0 col3" >5.900.128,54</td>
+      <td id="T_050c6_row0_col4" class="data row0 col4" >1.996.508,43</td>
+      <td id="T_050c6_row0_col5" class="data row0 col5" >1.497.992,46</td>
+      <td id="T_050c6_row0_col6" class="data row0 col6" >27.818.002,63</td>
+      <td id="T_050c6_row0_col7" class="data row0 col7" >3.903.620,11</td>
+      <td id="T_050c6_row0_col8" class="data row0 col8" >498.515,97</td>
+    </tr>
+    <tr>
+      <td id="T_050c6_row1_col0" class="data row1 col0" >fev</td>
+      <td id="T_050c6_row1_col1" class="data row1 col1" >32.803.952,72</td>
+      <td id="T_050c6_row1_col2" class="data row1 col2" >34.228.971,67</td>
+      <td id="T_050c6_row1_col3" class="data row1 col3" >8.633.003,54</td>
+      <td id="T_050c6_row1_col4" class="data row1 col4" >4.331.507,81</td>
+      <td id="T_050c6_row1_col5" class="data row1 col5" >3.849.803,35</td>
+      <td id="T_050c6_row1_col6" class="data row1 col6" >25.595.968,13</td>
+      <td id="T_050c6_row1_col7" class="data row1 col7" >4.301.495,73</td>
+      <td id="T_050c6_row1_col8" class="data row1 col8" >481.704,46</td>
+    </tr>
+    <tr>
+      <td id="T_050c6_row2_col0" class="data row2 col0" >mar</td>
+      <td id="T_050c6_row2_col1" class="data row2 col1" >32.803.952,72</td>
+      <td id="T_050c6_row2_col2" class="data row2 col2" >34.401.169,07</td>
+      <td id="T_050c6_row2_col3" class="data row2 col3" >11.775.771,58</td>
+      <td id="T_050c6_row2_col4" class="data row2 col4" >7.167.970,66</td>
+      <td id="T_050c6_row2_col5" class="data row2 col5" >6.661.881,44</td>
+      <td id="T_050c6_row2_col6" class="data row2 col6" >22.625.397,49</td>
+      <td id="T_050c6_row2_col7" class="data row2 col7" >4.607.800,92</td>
+      <td id="T_050c6_row2_col8" class="data row2 col8" >506.089,22</td>
+    </tr>
+    <tr>
+      <td id="T_050c6_row3_col0" class="data row3 col0" >abr</td>
+      <td id="T_050c6_row3_col1" class="data row3 col1" >32.803.952,72</td>
+      <td id="T_050c6_row3_col2" class="data row3 col2" >34.644.293,51</td>
+      <td id="T_050c6_row3_col3" class="data row3 col3" >14.362.576,12</td>
+      <td id="T_050c6_row3_col4" class="data row3 col4" >9.863.859,72</td>
+      <td id="T_050c6_row3_col5" class="data row3 col5" >9.207.689,99</td>
+      <td id="T_050c6_row3_col6" class="data row3 col6" >20.281.717,39</td>
+      <td id="T_050c6_row3_col7" class="data row3 col7" >4.498.716,40</td>
+      <td id="T_050c6_row3_col8" class="data row3 col8" >656.169,73</td>
+    </tr>
+    <tr>
+      <td id="T_050c6_row4_col0" class="data row4 col0" >mai</td>
+      <td id="T_050c6_row4_col1" class="data row4 col1" >32.803.952,72</td>
+      <td id="T_050c6_row4_col2" class="data row4 col2" >35.076.571,51</td>
+      <td id="T_050c6_row4_col3" class="data row4 col3" >17.290.869,80</td>
+      <td id="T_050c6_row4_col4" class="data row4 col4" >12.967.527,31</td>
+      <td id="T_050c6_row4_col5" class="data row4 col5" >12.568.454,45</td>
+      <td id="T_050c6_row4_col6" class="data row4 col6" >17.785.701,71</td>
+      <td id="T_050c6_row4_col7" class="data row4 col7" >4.323.342,49</td>
+      <td id="T_050c6_row4_col8" class="data row4 col8" >399.072,86</td>
+    </tr>
+    <tr>
+      <td id="T_050c6_row5_col0" class="data row5 col0" >jun</td>
+      <td id="T_050c6_row5_col1" class="data row5 col1" ></td>
+      <td id="T_050c6_row5_col2" class="data row5 col2" ></td>
+      <td id="T_050c6_row5_col3" class="data row5 col3" ></td>
+      <td id="T_050c6_row5_col4" class="data row5 col4" ></td>
+      <td id="T_050c6_row5_col5" class="data row5 col5" ></td>
+      <td id="T_050c6_row5_col6" class="data row5 col6" ></td>
+      <td id="T_050c6_row5_col7" class="data row5 col7" ></td>
+      <td id="T_050c6_row5_col8" class="data row5 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_050c6_row6_col0" class="data row6 col0" >jul</td>
+      <td id="T_050c6_row6_col1" class="data row6 col1" ></td>
+      <td id="T_050c6_row6_col2" class="data row6 col2" ></td>
+      <td id="T_050c6_row6_col3" class="data row6 col3" ></td>
+      <td id="T_050c6_row6_col4" class="data row6 col4" ></td>
+      <td id="T_050c6_row6_col5" class="data row6 col5" ></td>
+      <td id="T_050c6_row6_col6" class="data row6 col6" ></td>
+      <td id="T_050c6_row6_col7" class="data row6 col7" ></td>
+      <td id="T_050c6_row6_col8" class="data row6 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_050c6_row7_col0" class="data row7 col0" >ago</td>
+      <td id="T_050c6_row7_col1" class="data row7 col1" ></td>
+      <td id="T_050c6_row7_col2" class="data row7 col2" ></td>
+      <td id="T_050c6_row7_col3" class="data row7 col3" ></td>
+      <td id="T_050c6_row7_col4" class="data row7 col4" ></td>
+      <td id="T_050c6_row7_col5" class="data row7 col5" ></td>
+      <td id="T_050c6_row7_col6" class="data row7 col6" ></td>
+      <td id="T_050c6_row7_col7" class="data row7 col7" ></td>
+      <td id="T_050c6_row7_col8" class="data row7 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_050c6_row8_col0" class="data row8 col0" >set</td>
+      <td id="T_050c6_row8_col1" class="data row8 col1" ></td>
+      <td id="T_050c6_row8_col2" class="data row8 col2" ></td>
+      <td id="T_050c6_row8_col3" class="data row8 col3" ></td>
+      <td id="T_050c6_row8_col4" class="data row8 col4" ></td>
+      <td id="T_050c6_row8_col5" class="data row8 col5" ></td>
+      <td id="T_050c6_row8_col6" class="data row8 col6" ></td>
+      <td id="T_050c6_row8_col7" class="data row8 col7" ></td>
+      <td id="T_050c6_row8_col8" class="data row8 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_050c6_row9_col0" class="data row9 col0" >out</td>
+      <td id="T_050c6_row9_col1" class="data row9 col1" ></td>
+      <td id="T_050c6_row9_col2" class="data row9 col2" ></td>
+      <td id="T_050c6_row9_col3" class="data row9 col3" ></td>
+      <td id="T_050c6_row9_col4" class="data row9 col4" ></td>
+      <td id="T_050c6_row9_col5" class="data row9 col5" ></td>
+      <td id="T_050c6_row9_col6" class="data row9 col6" ></td>
+      <td id="T_050c6_row9_col7" class="data row9 col7" ></td>
+      <td id="T_050c6_row9_col8" class="data row9 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_050c6_row10_col0" class="data row10 col0" >nov</td>
+      <td id="T_050c6_row10_col1" class="data row10 col1" ></td>
+      <td id="T_050c6_row10_col2" class="data row10 col2" ></td>
+      <td id="T_050c6_row10_col3" class="data row10 col3" ></td>
+      <td id="T_050c6_row10_col4" class="data row10 col4" ></td>
+      <td id="T_050c6_row10_col5" class="data row10 col5" ></td>
+      <td id="T_050c6_row10_col6" class="data row10 col6" ></td>
+      <td id="T_050c6_row10_col7" class="data row10 col7" ></td>
+      <td id="T_050c6_row10_col8" class="data row10 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_050c6_row11_col0" class="data row11 col0" >dez</td>
+      <td id="T_050c6_row11_col1" class="data row11 col1" ></td>
+      <td id="T_050c6_row11_col2" class="data row11 col2" ></td>
+      <td id="T_050c6_row11_col3" class="data row11 col3" ></td>
+      <td id="T_050c6_row11_col4" class="data row11 col4" ></td>
+      <td id="T_050c6_row11_col5" class="data row11 col5" ></td>
+      <td id="T_050c6_row11_col6" class="data row11 col6" ></td>
+      <td id="T_050c6_row11_col7" class="data row11 col7" ></td>
+      <td id="T_050c6_row11_col8" class="data row11 col8" ></td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="despesa-com-pessoal-e-encargos-sociais">
+<h2>Despesa com Pessoal e Encargos Sociais<a class="headerlink" href="#despesa-com-pessoal-e-encargos-sociais" title="Permalink to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/e51d30ee73789116d68c4fa1bf3e4757cb3a0ec7544fe54cc4df01928d318697.png" src="../../_images/e51d30ee73789116d68c4fa1bf3e4757cb3a0ec7544fe54cc4df01928d318697.png" />
+</div>
+</div>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_ce6aa">
+  <caption>Despesa Corrente - valores acumulados - 2023</caption>
+  <thead>
+    <tr>
+      <th id="T_ce6aa_level0_col0" class="col_heading level0 col0" >Mês</th>
+      <th id="T_ce6aa_level0_col1" class="col_heading level0 col1" >Dotação Inicial</th>
+      <th id="T_ce6aa_level0_col2" class="col_heading level0 col2" >Dotação Atualizada</th>
+      <th id="T_ce6aa_level0_col3" class="col_heading level0 col3" >Empenhado</th>
+      <th id="T_ce6aa_level0_col4" class="col_heading level0 col4" >Liquidado</th>
+      <th id="T_ce6aa_level0_col5" class="col_heading level0 col5" >Pago</th>
+      <th id="T_ce6aa_level0_col6" class="col_heading level0 col6" >A Empenhar</th>
+      <th id="T_ce6aa_level0_col7" class="col_heading level0 col7" >A Liquidar</th>
+      <th id="T_ce6aa_level0_col8" class="col_heading level0 col8" >A Pagar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_ce6aa_row0_col0" class="data row0 col0" >jan</td>
+      <td id="T_ce6aa_row0_col1" class="data row0 col1" >16.506.989,00</td>
+      <td id="T_ce6aa_row0_col2" class="data row0 col2" >16.777.735,24</td>
+      <td id="T_ce6aa_row0_col3" class="data row0 col3" >1.496.230,07</td>
+      <td id="T_ce6aa_row0_col4" class="data row0 col4" >1.485.230,07</td>
+      <td id="T_ce6aa_row0_col5" class="data row0 col5" >1.133.348,52</td>
+      <td id="T_ce6aa_row0_col6" class="data row0 col6" >15.281.505,17</td>
+      <td id="T_ce6aa_row0_col7" class="data row0 col7" >11.000,00</td>
+      <td id="T_ce6aa_row0_col8" class="data row0 col8" >351.881,55</td>
+    </tr>
+    <tr>
+      <td id="T_ce6aa_row1_col0" class="data row1 col0" >fev</td>
+      <td id="T_ce6aa_row1_col1" class="data row1 col1" >16.506.989,00</td>
+      <td id="T_ce6aa_row1_col2" class="data row1 col2" >17.126.735,24</td>
+      <td id="T_ce6aa_row1_col3" class="data row1 col3" >2.960.129,66</td>
+      <td id="T_ce6aa_row1_col4" class="data row1 col4" >2.950.464,13</td>
+      <td id="T_ce6aa_row1_col5" class="data row1 col5" >2.606.920,54</td>
+      <td id="T_ce6aa_row1_col6" class="data row1 col6" >14.166.605,58</td>
+      <td id="T_ce6aa_row1_col7" class="data row1 col7" >9.665,53</td>
+      <td id="T_ce6aa_row1_col8" class="data row1 col8" >343.543,59</td>
+    </tr>
+    <tr>
+      <td id="T_ce6aa_row2_col0" class="data row2 col0" >mar</td>
+      <td id="T_ce6aa_row2_col1" class="data row2 col1" >16.506.989,00</td>
+      <td id="T_ce6aa_row2_col2" class="data row2 col2" >17.023.325,24</td>
+      <td id="T_ce6aa_row2_col3" class="data row2 col3" >4.531.645,32</td>
+      <td id="T_ce6aa_row2_col4" class="data row2 col4" >4.523.109,57</td>
+      <td id="T_ce6aa_row2_col5" class="data row2 col5" >4.152.058,91</td>
+      <td id="T_ce6aa_row2_col6" class="data row2 col6" >12.491.679,92</td>
+      <td id="T_ce6aa_row2_col7" class="data row2 col7" >8.535,75</td>
+      <td id="T_ce6aa_row2_col8" class="data row2 col8" >371.050,66</td>
+    </tr>
+    <tr>
+      <td id="T_ce6aa_row3_col0" class="data row3 col0" >abr</td>
+      <td id="T_ce6aa_row3_col1" class="data row3 col1" >16.506.989,00</td>
+      <td id="T_ce6aa_row3_col2" class="data row3 col2" >17.135.325,24</td>
+      <td id="T_ce6aa_row3_col3" class="data row3 col3" >6.073.106,83</td>
+      <td id="T_ce6aa_row3_col4" class="data row3 col4" >6.065.700,86</td>
+      <td id="T_ce6aa_row3_col5" class="data row3 col5" >5.711.689,57</td>
+      <td id="T_ce6aa_row3_col6" class="data row3 col6" >11.062.218,41</td>
+      <td id="T_ce6aa_row3_col7" class="data row3 col7" >7.405,97</td>
+      <td id="T_ce6aa_row3_col8" class="data row3 col8" >354.011,29</td>
+    </tr>
+    <tr>
+      <td id="T_ce6aa_row4_col0" class="data row4 col0" >mai</td>
+      <td id="T_ce6aa_row4_col1" class="data row4 col1" >16.506.989,00</td>
+      <td id="T_ce6aa_row4_col2" class="data row4 col2" >17.235.795,24</td>
+      <td id="T_ce6aa_row4_col3" class="data row4 col3" >7.616.976,92</td>
+      <td id="T_ce6aa_row4_col4" class="data row4 col4" >7.610.700,73</td>
+      <td id="T_ce6aa_row4_col5" class="data row4 col5" >7.259.280,32</td>
+      <td id="T_ce6aa_row4_col6" class="data row4 col6" >9.618.818,32</td>
+      <td id="T_ce6aa_row4_col7" class="data row4 col7" >6.276,19</td>
+      <td id="T_ce6aa_row4_col8" class="data row4 col8" >351.420,41</td>
+    </tr>
+    <tr>
+      <td id="T_ce6aa_row5_col0" class="data row5 col0" >jun</td>
+      <td id="T_ce6aa_row5_col1" class="data row5 col1" ></td>
+      <td id="T_ce6aa_row5_col2" class="data row5 col2" ></td>
+      <td id="T_ce6aa_row5_col3" class="data row5 col3" ></td>
+      <td id="T_ce6aa_row5_col4" class="data row5 col4" ></td>
+      <td id="T_ce6aa_row5_col5" class="data row5 col5" ></td>
+      <td id="T_ce6aa_row5_col6" class="data row5 col6" ></td>
+      <td id="T_ce6aa_row5_col7" class="data row5 col7" ></td>
+      <td id="T_ce6aa_row5_col8" class="data row5 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_ce6aa_row6_col0" class="data row6 col0" >jul</td>
+      <td id="T_ce6aa_row6_col1" class="data row6 col1" ></td>
+      <td id="T_ce6aa_row6_col2" class="data row6 col2" ></td>
+      <td id="T_ce6aa_row6_col3" class="data row6 col3" ></td>
+      <td id="T_ce6aa_row6_col4" class="data row6 col4" ></td>
+      <td id="T_ce6aa_row6_col5" class="data row6 col5" ></td>
+      <td id="T_ce6aa_row6_col6" class="data row6 col6" ></td>
+      <td id="T_ce6aa_row6_col7" class="data row6 col7" ></td>
+      <td id="T_ce6aa_row6_col8" class="data row6 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_ce6aa_row7_col0" class="data row7 col0" >ago</td>
+      <td id="T_ce6aa_row7_col1" class="data row7 col1" ></td>
+      <td id="T_ce6aa_row7_col2" class="data row7 col2" ></td>
+      <td id="T_ce6aa_row7_col3" class="data row7 col3" ></td>
+      <td id="T_ce6aa_row7_col4" class="data row7 col4" ></td>
+      <td id="T_ce6aa_row7_col5" class="data row7 col5" ></td>
+      <td id="T_ce6aa_row7_col6" class="data row7 col6" ></td>
+      <td id="T_ce6aa_row7_col7" class="data row7 col7" ></td>
+      <td id="T_ce6aa_row7_col8" class="data row7 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_ce6aa_row8_col0" class="data row8 col0" >set</td>
+      <td id="T_ce6aa_row8_col1" class="data row8 col1" ></td>
+      <td id="T_ce6aa_row8_col2" class="data row8 col2" ></td>
+      <td id="T_ce6aa_row8_col3" class="data row8 col3" ></td>
+      <td id="T_ce6aa_row8_col4" class="data row8 col4" ></td>
+      <td id="T_ce6aa_row8_col5" class="data row8 col5" ></td>
+      <td id="T_ce6aa_row8_col6" class="data row8 col6" ></td>
+      <td id="T_ce6aa_row8_col7" class="data row8 col7" ></td>
+      <td id="T_ce6aa_row8_col8" class="data row8 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_ce6aa_row9_col0" class="data row9 col0" >out</td>
+      <td id="T_ce6aa_row9_col1" class="data row9 col1" ></td>
+      <td id="T_ce6aa_row9_col2" class="data row9 col2" ></td>
+      <td id="T_ce6aa_row9_col3" class="data row9 col3" ></td>
+      <td id="T_ce6aa_row9_col4" class="data row9 col4" ></td>
+      <td id="T_ce6aa_row9_col5" class="data row9 col5" ></td>
+      <td id="T_ce6aa_row9_col6" class="data row9 col6" ></td>
+      <td id="T_ce6aa_row9_col7" class="data row9 col7" ></td>
+      <td id="T_ce6aa_row9_col8" class="data row9 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_ce6aa_row10_col0" class="data row10 col0" >nov</td>
+      <td id="T_ce6aa_row10_col1" class="data row10 col1" ></td>
+      <td id="T_ce6aa_row10_col2" class="data row10 col2" ></td>
+      <td id="T_ce6aa_row10_col3" class="data row10 col3" ></td>
+      <td id="T_ce6aa_row10_col4" class="data row10 col4" ></td>
+      <td id="T_ce6aa_row10_col5" class="data row10 col5" ></td>
+      <td id="T_ce6aa_row10_col6" class="data row10 col6" ></td>
+      <td id="T_ce6aa_row10_col7" class="data row10 col7" ></td>
+      <td id="T_ce6aa_row10_col8" class="data row10 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_ce6aa_row11_col0" class="data row11 col0" >dez</td>
+      <td id="T_ce6aa_row11_col1" class="data row11 col1" ></td>
+      <td id="T_ce6aa_row11_col2" class="data row11 col2" ></td>
+      <td id="T_ce6aa_row11_col3" class="data row11 col3" ></td>
+      <td id="T_ce6aa_row11_col4" class="data row11 col4" ></td>
+      <td id="T_ce6aa_row11_col5" class="data row11 col5" ></td>
+      <td id="T_ce6aa_row11_col6" class="data row11 col6" ></td>
+      <td id="T_ce6aa_row11_col7" class="data row11 col7" ></td>
+      <td id="T_ce6aa_row11_col8" class="data row11 col8" ></td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="despesa-de-custeio">
+<h2>Despesa de Custeio<a class="headerlink" href="#despesa-de-custeio" title="Permalink to this heading">#</a></h2>
+<p>Outras despesas correntes, exceto pessoal, encargos sociais e juros da dívida.</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/e1047d8790e451daed257963296255e7180b4b1c41585a67b3140c3f2ae14d72.png" src="../../_images/e1047d8790e451daed257963296255e7180b4b1c41585a67b3140c3f2ae14d72.png" />
+</div>
+</div>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_5031d">
+  <caption>Despesa de Custeio - valores acumulados - 2023</caption>
+  <thead>
+    <tr>
+      <th id="T_5031d_level0_col0" class="col_heading level0 col0" >Mês</th>
+      <th id="T_5031d_level0_col1" class="col_heading level0 col1" >Dotação Inicial</th>
+      <th id="T_5031d_level0_col2" class="col_heading level0 col2" >Dotação Atualizada</th>
+      <th id="T_5031d_level0_col3" class="col_heading level0 col3" >Empenhado</th>
+      <th id="T_5031d_level0_col4" class="col_heading level0 col4" >Liquidado</th>
+      <th id="T_5031d_level0_col5" class="col_heading level0 col5" >Pago</th>
+      <th id="T_5031d_level0_col6" class="col_heading level0 col6" >A Empenhar</th>
+      <th id="T_5031d_level0_col7" class="col_heading level0 col7" >A Liquidar</th>
+      <th id="T_5031d_level0_col8" class="col_heading level0 col8" >A Pagar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_5031d_row0_col0" class="data row0 col0" >jan</td>
+      <td id="T_5031d_row0_col1" class="data row0 col1" >16.296.963,72</td>
+      <td id="T_5031d_row0_col2" class="data row0 col2" >16.940.395,93</td>
+      <td id="T_5031d_row0_col3" class="data row0 col3" >4.403.898,47</td>
+      <td id="T_5031d_row0_col4" class="data row0 col4" >511.278,36</td>
+      <td id="T_5031d_row0_col5" class="data row0 col5" >364.643,94</td>
+      <td id="T_5031d_row0_col6" class="data row0 col6" >12.536.497,46</td>
+      <td id="T_5031d_row0_col7" class="data row0 col7" >3.892.620,11</td>
+      <td id="T_5031d_row0_col8" class="data row0 col8" >146.634,42</td>
+    </tr>
+    <tr>
+      <td id="T_5031d_row1_col0" class="data row1 col0" >fev</td>
+      <td id="T_5031d_row1_col1" class="data row1 col1" >16.296.963,72</td>
+      <td id="T_5031d_row1_col2" class="data row1 col2" >17.102.236,43</td>
+      <td id="T_5031d_row1_col3" class="data row1 col3" >5.672.873,88</td>
+      <td id="T_5031d_row1_col4" class="data row1 col4" >1.381.043,68</td>
+      <td id="T_5031d_row1_col5" class="data row1 col5" >1.242.882,81</td>
+      <td id="T_5031d_row1_col6" class="data row1 col6" >11.429.362,55</td>
+      <td id="T_5031d_row1_col7" class="data row1 col7" >4.291.830,20</td>
+      <td id="T_5031d_row1_col8" class="data row1 col8" >138.160,87</td>
+    </tr>
+    <tr>
+      <td id="T_5031d_row2_col0" class="data row2 col0" >mar</td>
+      <td id="T_5031d_row2_col1" class="data row2 col1" >16.296.963,72</td>
+      <td id="T_5031d_row2_col2" class="data row2 col2" >17.377.843,83</td>
+      <td id="T_5031d_row2_col3" class="data row2 col3" >7.244.126,26</td>
+      <td id="T_5031d_row2_col4" class="data row2 col4" >2.644.861,09</td>
+      <td id="T_5031d_row2_col5" class="data row2 col5" >2.509.822,53</td>
+      <td id="T_5031d_row2_col6" class="data row2 col6" >10.133.717,57</td>
+      <td id="T_5031d_row2_col7" class="data row2 col7" >4.599.265,17</td>
+      <td id="T_5031d_row2_col8" class="data row2 col8" >135.038,56</td>
+    </tr>
+    <tr>
+      <td id="T_5031d_row3_col0" class="data row3 col0" >abr</td>
+      <td id="T_5031d_row3_col1" class="data row3 col1" >16.296.963,72</td>
+      <td id="T_5031d_row3_col2" class="data row3 col2" >17.508.968,27</td>
+      <td id="T_5031d_row3_col3" class="data row3 col3" >8.289.469,29</td>
+      <td id="T_5031d_row3_col4" class="data row3 col4" >3.798.158,86</td>
+      <td id="T_5031d_row3_col5" class="data row3 col5" >3.496.000,42</td>
+      <td id="T_5031d_row3_col6" class="data row3 col6" >9.219.498,98</td>
+      <td id="T_5031d_row3_col7" class="data row3 col7" >4.491.310,43</td>
+      <td id="T_5031d_row3_col8" class="data row3 col8" >302.158,44</td>
+    </tr>
+    <tr>
+      <td id="T_5031d_row4_col0" class="data row4 col0" >mai</td>
+      <td id="T_5031d_row4_col1" class="data row4 col1" >16.296.963,72</td>
+      <td id="T_5031d_row4_col2" class="data row4 col2" >17.840.776,27</td>
+      <td id="T_5031d_row4_col3" class="data row4 col3" >9.673.892,88</td>
+      <td id="T_5031d_row4_col4" class="data row4 col4" >5.356.826,58</td>
+      <td id="T_5031d_row4_col5" class="data row4 col5" >5.309.174,13</td>
+      <td id="T_5031d_row4_col6" class="data row4 col6" >8.166.883,39</td>
+      <td id="T_5031d_row4_col7" class="data row4 col7" >4.317.066,30</td>
+      <td id="T_5031d_row4_col8" class="data row4 col8" >47.652,45</td>
+    </tr>
+    <tr>
+      <td id="T_5031d_row5_col0" class="data row5 col0" >jun</td>
+      <td id="T_5031d_row5_col1" class="data row5 col1" ></td>
+      <td id="T_5031d_row5_col2" class="data row5 col2" ></td>
+      <td id="T_5031d_row5_col3" class="data row5 col3" ></td>
+      <td id="T_5031d_row5_col4" class="data row5 col4" ></td>
+      <td id="T_5031d_row5_col5" class="data row5 col5" ></td>
+      <td id="T_5031d_row5_col6" class="data row5 col6" ></td>
+      <td id="T_5031d_row5_col7" class="data row5 col7" ></td>
+      <td id="T_5031d_row5_col8" class="data row5 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_5031d_row6_col0" class="data row6 col0" >jul</td>
+      <td id="T_5031d_row6_col1" class="data row6 col1" ></td>
+      <td id="T_5031d_row6_col2" class="data row6 col2" ></td>
+      <td id="T_5031d_row6_col3" class="data row6 col3" ></td>
+      <td id="T_5031d_row6_col4" class="data row6 col4" ></td>
+      <td id="T_5031d_row6_col5" class="data row6 col5" ></td>
+      <td id="T_5031d_row6_col6" class="data row6 col6" ></td>
+      <td id="T_5031d_row6_col7" class="data row6 col7" ></td>
+      <td id="T_5031d_row6_col8" class="data row6 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_5031d_row7_col0" class="data row7 col0" >ago</td>
+      <td id="T_5031d_row7_col1" class="data row7 col1" ></td>
+      <td id="T_5031d_row7_col2" class="data row7 col2" ></td>
+      <td id="T_5031d_row7_col3" class="data row7 col3" ></td>
+      <td id="T_5031d_row7_col4" class="data row7 col4" ></td>
+      <td id="T_5031d_row7_col5" class="data row7 col5" ></td>
+      <td id="T_5031d_row7_col6" class="data row7 col6" ></td>
+      <td id="T_5031d_row7_col7" class="data row7 col7" ></td>
+      <td id="T_5031d_row7_col8" class="data row7 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_5031d_row8_col0" class="data row8 col0" >set</td>
+      <td id="T_5031d_row8_col1" class="data row8 col1" ></td>
+      <td id="T_5031d_row8_col2" class="data row8 col2" ></td>
+      <td id="T_5031d_row8_col3" class="data row8 col3" ></td>
+      <td id="T_5031d_row8_col4" class="data row8 col4" ></td>
+      <td id="T_5031d_row8_col5" class="data row8 col5" ></td>
+      <td id="T_5031d_row8_col6" class="data row8 col6" ></td>
+      <td id="T_5031d_row8_col7" class="data row8 col7" ></td>
+      <td id="T_5031d_row8_col8" class="data row8 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_5031d_row9_col0" class="data row9 col0" >out</td>
+      <td id="T_5031d_row9_col1" class="data row9 col1" ></td>
+      <td id="T_5031d_row9_col2" class="data row9 col2" ></td>
+      <td id="T_5031d_row9_col3" class="data row9 col3" ></td>
+      <td id="T_5031d_row9_col4" class="data row9 col4" ></td>
+      <td id="T_5031d_row9_col5" class="data row9 col5" ></td>
+      <td id="T_5031d_row9_col6" class="data row9 col6" ></td>
+      <td id="T_5031d_row9_col7" class="data row9 col7" ></td>
+      <td id="T_5031d_row9_col8" class="data row9 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_5031d_row10_col0" class="data row10 col0" >nov</td>
+      <td id="T_5031d_row10_col1" class="data row10 col1" ></td>
+      <td id="T_5031d_row10_col2" class="data row10 col2" ></td>
+      <td id="T_5031d_row10_col3" class="data row10 col3" ></td>
+      <td id="T_5031d_row10_col4" class="data row10 col4" ></td>
+      <td id="T_5031d_row10_col5" class="data row10 col5" ></td>
+      <td id="T_5031d_row10_col6" class="data row10 col6" ></td>
+      <td id="T_5031d_row10_col7" class="data row10 col7" ></td>
+      <td id="T_5031d_row10_col8" class="data row10 col8" ></td>
+    </tr>
+    <tr>
+      <td id="T_5031d_row11_col0" class="data row11 col0" >dez</td>
+      <td id="T_5031d_row11_col1" class="data row11 col1" ></td>
+      <td id="T_5031d_row11_col2" class="data row11 col2" ></td>
+      <td id="T_5031d_row11_col3" class="data row11 col3" ></td>
+      <td id="T_5031d_row11_col4" class="data row11 col4" ></td>
+      <td id="T_5031d_row11_col5" class="data row11 col5" ></td>
+      <td id="T_5031d_row11_col6" class="data row11 col6" ></td>
+      <td id="T_5031d_row11_col7" class="data row11 col7" ></td>
+      <td id="T_5031d_row11_col8" class="data row11 col8" ></td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="despesa-por-orgaos">
+<h2>Despesa por Órgãos<a class="headerlink" href="#despesa-por-orgaos" title="Permalink to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/056dc5b2e99ef3c6706210c181ff56afbe7b0aacd6ce3c0d1e986b42b279d8d3.png" src="../../_images/056dc5b2e99ef3c6706210c181ff56afbe7b0aacd6ce3c0d1e986b42b279d8d3.png" />
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_766d3">
+  <caption>Despesa por Órgãos - valores acumulados - 2023</caption>
+  <thead>
+    <tr>
+      <th id="T_766d3_level0_col0" class="col_heading level0 col0" >Órgão</th>
+      <th id="T_766d3_level0_col1" class="col_heading level0 col1" >Liquidado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_766d3_row0_col0" class="data row0 col0" >SECRETARIA DE EDUCACAO CULTURA DESPORTO E TURISMO</td>
+      <td id="T_766d3_row0_col1" class="data row0 col1" >4.707.083,80</td>
+    </tr>
+    <tr>
+      <td id="T_766d3_row1_col0" class="data row1 col0" >SECRETARIA MUNICIPAL DE SAUDE</td>
+      <td id="T_766d3_row1_col1" class="data row1 col1" >3.335.511,59</td>
+    </tr>
+    <tr>
+      <td id="T_766d3_row2_col0" class="data row2 col0" >SECRETARIA DE OBRAS E VIACAO</td>
+      <td id="T_766d3_row2_col1" class="data row2 col1" >1.132.831,87</td>
+    </tr>
+    <tr>
+      <td id="T_766d3_row3_col0" class="data row3 col0" >SECRETARIA DE SERVICOS URBANOS E TRANSITO</td>
+      <td id="T_766d3_row3_col1" class="data row3 col1" >896.568,10</td>
+    </tr>
+    <tr>
+      <td id="T_766d3_row4_col0" class="data row4 col0" >SECRETARIA DA AGRICULTURA E ABASTECIMENTO</td>
+      <td id="T_766d3_row4_col1" class="data row4 col1" >775.164,27</td>
+    </tr>
+    <tr>
+      <td id="T_766d3_row5_col0" class="data row5 col0" >SECRETARIA DA FAZENDA</td>
+      <td id="T_766d3_row5_col1" class="data row5 col1" >628.286,34</td>
+    </tr>
+    <tr>
+      <td id="T_766d3_row6_col0" class="data row6 col0" >GABINETE DO PREFEITO E VICE PREFEITO</td>
+      <td id="T_766d3_row6_col1" class="data row6 col1" >569.399,00</td>
+    </tr>
+    <tr>
+      <td id="T_766d3_row7_col0" class="data row7 col0" >SECRETARIA DA ASSISTENCIA SOCIAL</td>
+      <td id="T_766d3_row7_col1" class="data row7 col1" >538.453,79</td>
+    </tr>
+    <tr>
+      <td id="T_766d3_row8_col0" class="data row8 col0" >SECRETARIA DE ADMINISTRACAO</td>
+      <td id="T_766d3_row8_col1" class="data row8 col1" >494.979,33</td>
+    </tr>
+    <tr>
+      <td id="T_766d3_row9_col0" class="data row9 col0" >ENCARGOS ESPECIAIS</td>
+      <td id="T_766d3_row9_col1" class="data row9 col1" >472.620,19</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src\pm"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="receitas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Receitas</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despesa-total">Despesa Total</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despesa-corrente">Despesa Corrente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despesa-com-pessoal-e-encargos-sociais">Despesa com Pessoal e Encargos Sociais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despesa-de-custeio">Despesa de Custeio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despesa-por-orgaos">Despesa por Órgãos</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Secretaria da Fazenda / Setor de Contabilidade
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

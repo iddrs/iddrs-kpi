@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: src/index
+parts:
+  - caption: "Prefeitura"
+    chapters:
+    - file: src/pm/receitas
+    - file: src/pm/despesas
+  
