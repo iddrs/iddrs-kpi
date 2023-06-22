@@ -22,7 +22,7 @@ html:
 
 myst:
   substitutions:
-    periodo_formatado: "Maio de 2023"
+    periodo_formatado: "Abril de 2023"
 
 parse:
   myst_enable_extensions:
