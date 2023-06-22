@@ -5,7 +5,7 @@ title: "Painel de indicadores"
 author: "Secretaria da Fazenda / Setor de Contabilidade"
 copyright: "2023"
 logo: assets/images/brasao.jpg
-exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", "README.*", "capa-*.ipynb"]
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", "README.**", "capa-**.ipynb"]
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -19,7 +19,7 @@ html:
   use_issues_button: false
   home_page_in_navbar: true
   baseurl: "https://iddrs.github.io/iddrs-kpi/"
-  announcement: "Esta é uma versão em desenvolvimento. Encontrou um erro? Contate o desenvolvedor <everton3x@gmail.com>"
+  announcement: "Esta é uma versão em desenvolvimento. Encontrou um erro? Contate o <a href='mailto:everton3x@gmail.com'>desenvolvedor</a>."
 
 parse:
   myst_substitutions:
