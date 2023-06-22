@@ -1,6 +1,6 @@
 cd src/pm
 
-nbmerge -o pm.ipynb -v receitas.ipynb despesas.ipynb
+nbmerge -o pm.ipynb -v capa-pm.ipynb receitas.ipynb despesas.ipynb
 
 jupyter nbconvert --to=webpdf --no-input --execute --embed-images pm.ipynb
 
