@@ -21,20 +21,15 @@ html:
   baseurl: "https://iddrs.github.io/iddrs-kpi/"
   announcement: "Esta é uma versão em desenvolvimento. Encontrou um erro? Contate o desenvolvedor <everton3x@gmail.com>"
 
-myst:
-  substitutions:
-    periodo_formatado: "Abril de 2023"
-
 parse:
+  myst_substitutions:
+    data_base: "Abril de 2023"
   myst_enable_extensions:
     - colon_fence
     - dollarmath
     - linkify
     - substitution
     - tasklist
-
-  myst_substitutions:
-    data_base: "Abril de 2023"
 
 # Define the name of the latex output file for PDF builds
 # latex:
