@@ -34,6 +34,18 @@ def perc0_formatter(x):
     if x == 0.0:
         return '-'
     
+    
+def perc2_formatter(x):
+    if pd.isnull(x):
+        return ''
+    x = round(x, 4)
+    if x < 0.0:
+        return f'({x:,.2%})'.replace(',', '_').replace('.', ',').replace('_', '.').replace('-', '')
+    if x > 0.0:
+        return f'{x:,.2%}'.replace(',', '_').replace('.', ',').replace('_', '.')
+    if x == 0.0:
+        return '-'
+
 def date_to_month_name(x):
     if pd.isnull(x):
         return ''
